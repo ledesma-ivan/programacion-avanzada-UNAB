@@ -1,3 +1,36 @@
+""" Ejercicio 0.0 (La de la encuesta):
+ Programar preferentemente en Python la siguiente consigna utilizando funciones y parámetros:
+ Calcular el área y el perímetro de un cuadrado, de un rectángulo y de una circunferencia.
+ Realizar las invocaciones a las distintas funciones definidas anteriormente.
+
+ Nota 1: No utilizar por favor ninguna IA generativa (ChatGPT, DeepSeek, entre otras), sino realizarlo desde el conocimiento propio o "googleando" solamente.
+ Nota 2: Como recomendación puede realizar este challenge (desafío) usando el paradigma de programación estructurado o el orientado a objetos (opcional). 
+"""
+def cuadrado(lado):
+   area = lado * lado
+   perimetro = 4 * lado
+   mensaje = "El Area es: {area}, y su perimetro es {perimetro} del cuadrado"
+   return mensaje
+
+def rectangulo(ancho, alto):
+   area = ancho * alto 
+   perimetro = (2 * ancho) / (2 * ancho)
+   mensaje = "El Area es: {area}, y su perimetro es {perimetro} del rectangulo"
+   return mensaje
+
+def circunferencia(radio):
+   area = 3.14 * radio ** 2
+   perimetro = 2 * 3.14 * radio
+   mensaje = "El Area es: {area}, y su perimetro es {perimetro} circunferencia"
+   return mensaje
+
+print(cuadrado(2))
+print(rectangulo(2, 4))
+print(circunferencia(2))
+
+# Alternativa opcional:
+
+
 #Ejercicio 1:
 # a) Dado el siguiente código indique cuáles son los parámetros reales y los formales:
 #Definición de funciones
@@ -148,11 +181,170 @@ Ejercicio 7: Definir una función que calcule el área de un círculo, otra que 
 rectángulo y otra que calcule el área de un cuadrado. Analice qué parámetros deberían recibir
 dichas funciones.
 """
+def circulo(radio):
+   area = 3.14 * radio ** 2
+   mensaje = "El Area del circulo es: {area}"
+   return mensaje 
 
-""" 
+def cuadrado(lado):
+   area = lado * lado
+   perimetro = 4 * lado
+   mensaje = "El Area es: {area}, y su perimetro es {perimetro} del cuadrado"
+   return mensaje
+
+def circulo(ancho, alto):
+   area = ancho * alto 
+   perimetro = (2 * ancho) / (2 * ancho)
+   mensaje = "El Area es: {area}, y su perimetro es {perimetro} del rectangulo"
+   return mensaje
+
+print(circunferencia(2))
+print(cuadrado(2))
+print(rectangulo(2, 4))
+
+
+
+# Prestar atencion hay veces que no se piden un parametro en la funcion.
+"""
+Ejercicio 8: Definir una función llamada calculo_rebaja que reciba dos números, uno con el precio
+anterior y otro para el precio rebajado y devuelva un número que represente el porcentaje
+rebajado.
+
+"""
+
+def calculo_rebaja(precio_anterior, precio_rebajado):
+   # Calculamos la diferencia del precio original con el rebajado
+   rebaja = precio_anterior - precio_rebajado
+   # Dividimos el precio anterior con el resultado de la rebaja
+   rebajando = rebaja / precio_anterior
+   # Multiplimos para obtener el porcentaje final.
+   resultado =  rebajando * 100
+   return resultado
+
+print(calculo_rebaja(1200, 800))
+
+# Otra forma de hacer sin argumentos o parametros
+
+def calculo_rebaja():
+   precio_anterior = float(input("Ingrese el precio anterior: "))
+   precio_rebajado =  float(input("Ingrese el precio rebajado: "))
+   # Calculamos la diferencia del precio original con el rebajado
+   rebaja = precio_anterior - precio_rebajado
+   # Dividimos el precio anterior con el resultado de la rebaja
+   rebajando = rebaja / precio_anterior
+   # Multiplimos para obtener el porcentaje final.
+   resultado =  rebajando * 100
+   return resultado
+
+print(calculo_rebaja)
+
+
+
+
+"""
+Ejercicio 9: Definir una función llamada calculo_nuevo_precio que reciba dos números, uno con el
+precio anterior y otro con el número de porcentaje a aumentar y devuelva el precio aumentado.
+"""
+
+# Forma correcta
+def calculo_nuevo_precio():
+   precio_anterior = float(input("Ingrese el precio anterior: "))
+   porcentaje_aumentar =  float(input("Ingrese el precio rebajado: "))
+   precio_aumetado = precio_anterior + (precio_anterior * porcentaje_aumentar)
+   return precio_aumetado
+
+print(calculo_nuevo_precio())
+
+# Nunca se pidio que entre como parametros
+def calculo_nuevo_precio(precio_anterior, porcentaje_aumentar):
+   precio_aumetado = precio_anterior + (precio_anterior * porcentaje_aumentar)
+   return precio_aumetado
+
+print(calculo_nuevo_precio(1, 0.2))
+
+
+
+"""
+Ejercicio 10: Definir una función llamada calculo_transporte que reciba cuatro números: la cantidad
+de alumnos de 1era, 2da y 3er. salita de un jardín de infantes y la cantidad de asientos del
+transporte escolar. La función debe retornar cuántos micros necesito contratar para una excursión
+sabiendo que cada salita es acompañada por tres adultos.
+"""
+
+
+
+"""
+Ejercicio 11: Definir una función llamada armo_cartel que reciba una cadena de caracteres (para el
+nombre del producto) y dos números (el precio anterior y el otro para el precio rebajado) e imprima
+un cartel de la siguiente forma:
+*************************************
+Atención!!! Gran rebaja para el producto nombre (recibido como parámetro)
+Antes: precio anterior (dato recibido como parámetro)
+Ahora: precio rebajado (dato recibido como parámetro)
+"""
+def armo_cartel(producto_nombre, precio_anterior, precio_rebajado):
+   # Calculamos la diferencia del precio original con el rebajado
+   rebaja = precio_anterior - precio_rebajado
+   # Dividimos el precio anterior con el resultado de la rebaja
+   rebajando = rebaja / precio_anterior
+   # Multiplimos para obtener el porcentaje final.
+   resultado =  rebajando * 100
+   mensaje = f""""" *************************************
+   Atención!!! Gran rebaja para el producto {producto_nombre}
+   Antes: {precio_anterior}
+   Ahora: {precio_rebajado} """
+   return mensaje
+
+print(armo_cartel("Test", 1, 0.2))
+
+
+"""
+Ejercicio 13: Definir una función llamada a_pagar que reciba 4 números: la cantidad de personas, el
+monto gastado en bebida, el monto gastado en comida y el del alquiler del lugar, y retorne cuánto le
+toca pagar a cada uno.
+"""
+def llamada_a_pagar(cantidad_pagar_personas, monto_bebida, monto_comida, alquiler_del_lugar):
+   resultado = (monto_bebida + monto_comida, alquiler_del_lugar) / cantidad_pagar_personas
+   mensaje = f"Le toca pagar a cada uno {resultado}"
+   return mensaje
+
+
+"""
+Ejercicio 14: Definir tres funciones llamadas convertir_a_dolar, convertir_a_euro y convertir_a_real.
+Cada función recibe un parámetro que representa un monto en pesos y devuelve su conversión
+respectiva.
+"""
+
+def convertir_a_dolar(pesos, dolar):
+   conversion_dolar = pesos / dolar
+   return conversion_dolar
+
+def convertir_a_euros(pesos, euros):
+   conversion_euros = pesos / euros
+   return conversion_euros
+
+def convertir_a_real(pesos, reales):
+   conversion_reales = pesos / reales
+   return reales
+
+print(convertir_a_dolar(10000, 1050))
+print(convertir_a_euros(10000, 1150))
+print(convertir_a_real(10000, 185))
+
+
+"""
+Ejercicio 15: Definir una función llamada calculo_dosis que reciba tres números. Uno para la
+cantidad de días que debe suministrar el remedio, el segundo dato para la cantidad de veces por
+día que debe tomarlo, y el último dato para la cantidad de comprimidos que trae el envase. La
+función debe devolver verdadero si el envase alcanza para ese tratamiento y falso si no alcanza.
+"""
+def calculo_dosis(cantidad_dias, cantidad_de_veces_dias, cantidad_de_comprimidos):
+   pass
+
+"""
 Ejercicio 16: Definir una función llamada precio_con_iva que agrega el IVA (21%) de un producto
-dado su precio de venta sin IVA."
-""" 
+dado su precio de venta sin IVA.
+ """
 
 def precio_con_iva(precio):
    precio_iva = precio + (precio * 0.21)
