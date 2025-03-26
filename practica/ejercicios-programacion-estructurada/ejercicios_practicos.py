@@ -527,84 +527,83 @@ def numeradorFraccion(x):
     # Retorna el numerador que se encuentra en la fracción x, representada
     # como una lista
     if len(x) == 2:
-      numerador = x[0]
-      return numerador
+        numerador = x[0]
+        return numerador
     else:
-      print("Entrada no valida")
-      return None
+        print("Entrada no valida")
+        return None
 
 
 def denominadorFraccion(x):
     # Retorna el denominador que se encuentra en la fracción x, representada
     # como una lista
     if len(x) == 2:
-      denominador = x[-1]
-      return denominador
-
-
+        denominador = x[-1]
+        return denominador
 
 
 def sumaFracciones(x, y):
     # Retorna la suma de las fracciones, representadas como listas
-   if x == 2 and y == 2:
-    numeradores = x[0] + y[0]
-    denominadores = x[-1] + y[-1]
-    lista = []
-    lista.append(numeradores)
-    lista.append(denominadores)
-    return lista
+    if x == 2 and y == 2:
+        numeradores = x[0] + y[0]
+        denominadores = x[-1] + y[-1]
+        lista = []
+        lista.append(numeradores)
+        lista.append(denominadores)
+        return lista
 
-   else:
-      print("Entrada no valida")
-      return None
+    else:
+        print("Entrada no valida")
+        return None
 
 
 def restaFracciones(x, y):
     # Retorna la resta de las fracciones, representadas como listas
-   if len(x) == 2 and len(y) == 2:
-    numeradores = x[0] - y[0]
-    denominadores = x[-1] - y[-1]
-    lista = []
-    lista.append(numeradores)
-    lista.append(denominadores)
-    return lista
+    if len(x) == 2 and len(y) == 2:
+        numeradores = x[0] - y[0]
+        denominadores = x[-1] - y[-1]
+        lista = []
+        lista.append(numeradores)
+        lista.append(denominadores)
+        return lista
 
-   else:
-      print("Entrada no valida")
-      return None
+    else:
+        print("Entrada no valida")
+        return None
 
 
 def divisionFracciones(x, y):
     # Retorna la división de las fracciones, representadas como listas:
-   if len(x) == 2 and len(y) == 2:
-    numeradores = x[0] / y[0]
-    denominadores = x[-1] / y[-1]
-    lista = []
-    lista.append(numeradores)
-    lista.append(denominadores)
-    return lista
+    if len(x) == 2 and len(y) == 2:
+        numeradores = x[0] / y[0]
+        denominadores = x[-1] / y[-1]
+        lista = []
+        lista.append(numeradores)
+        lista.append(denominadores)
+        return lista
 
-   else:
-      print("Entrada no valida")
-      return None
+    else:
+        print("Entrada no valida")
+        return None
+
 
 def multiplicacionFracciones(x, y):
     # Retorna la multiplicación fracciones, representadas como listas
-   if len(x) == 2 and len(y) == 2:
-    numeradores = x[0] * y[0]
-    denominadores = x[-1] * y[-1]
-    lista = []
-    lista.append(numeradores)
-    lista.append(denominadores)
-    return lista
+    if len(x) == 2 and len(y) == 2:
+        numeradores = x[0] * y[0]
+        denominadores = x[-1] * y[-1]
+        lista = []
+        lista.append(numeradores)
+        lista.append(denominadores)
+        return lista
 
-   else:
-      print("Entrada no valida")
-      return None
+    else:
+        print("Entrada no valida")
+        return None
 
 
 # Zona del programa principal
-# 
+#
 print("Bienvenidos / as a cuentas con Fracciones")
 a = cargarFraccion()
 b = cargarFraccion()
