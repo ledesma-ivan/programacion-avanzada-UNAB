@@ -461,3 +461,166 @@ def precio_con_iva(precio):
 
 
 print(precio_con_iva(5))
+
+# Ejercicios complementario
+"""
+Ejercicio 17:
+a) Definir una función que reciba como parámetro una lista de números y retorne la suma del
+primer elemento con el último.
+
+
+ """
+# Zona de definiciones de funciones
+
+
+def sumaPrimUlt(lista):
+    # -1 es el ultimo elemento de la lista
+    # retorna la suma entre el primer elemento de la lista con el último
+    suma = lista[0] + lista[-1]
+    return suma
+
+
+def promedioPrimUlt(lista):
+    # retorna el promedio entre el primer elemento de la lista con el último
+    promedio = (lista[0] + lista[-1]) / 2
+    return promedio
+
+# Zona del programa principal
+# solicitar al usuario 3 números, armar la lista e invocar las funciones
+# anteriores mostrando los #resultados
+
+
+lista = []
+
+for i in range(3):
+    lista_n = int(input("Ingrese un numero"))
+    lista.append(lista_n)
+
+
+print(sumaPrimUlt(lista))
+print(promedioPrimUlt(lista))
+
+
+'''
+Ejercicio 18: En este código una fracción está representada por una lista de dos elementos, el
+numerador y el denominador. Por ejemplo la fracción 3⁄4 sería la lista (3,4). Complete el código
+según corresponda.
+'''
+
+"""
+Prestar antencion en esta caso el input es lista, no hace falta crear """
+# Zona de definiciones de funciones
+
+
+def cargarFraccion():
+    # Solicita al usuario el numerador y denominador. Arma la fracción como
+    # una lista y la retorna
+    a = int(input("Ingrese el numerador: "))
+    b = int(input("Ingrese el denominador: "))
+    lista = []
+    lista.append(a)
+    lista.append(b)
+    return lista
+
+
+def numeradorFraccion(x):
+    # Retorna el numerador que se encuentra en la fracción x, representada
+    # como una lista
+    if len(x) == 2:
+      numerador = x[0]
+      return numerador
+    else:
+      print("Entrada no valida")
+      return None
+
+
+def denominadorFraccion(x):
+    # Retorna el denominador que se encuentra en la fracción x, representada
+    # como una lista
+    if len(x) == 2:
+      denominador = x[-1]
+      return denominador
+
+
+
+
+def sumaFracciones(x, y):
+    # Retorna la suma de las fracciones, representadas como listas
+   if x == 2 and y == 2:
+    numeradores = x[0] + y[0]
+    denominadores = x[-1] + y[-1]
+    lista = []
+    lista.append(numeradores)
+    lista.append(denominadores)
+    return lista
+
+   else:
+      print("Entrada no valida")
+      return None
+
+
+def restaFracciones(x, y):
+    # Retorna la resta de las fracciones, representadas como listas
+   if len(x) == 2 and len(y) == 2:
+    numeradores = x[0] - y[0]
+    denominadores = x[-1] - y[-1]
+    lista = []
+    lista.append(numeradores)
+    lista.append(denominadores)
+    return lista
+
+   else:
+      print("Entrada no valida")
+      return None
+
+
+def divisionFracciones(x, y):
+    # Retorna la división de las fracciones, representadas como listas:
+   if len(x) == 2 and len(y) == 2:
+    numeradores = x[0] / y[0]
+    denominadores = x[-1] / y[-1]
+    lista = []
+    lista.append(numeradores)
+    lista.append(denominadores)
+    return lista
+
+   else:
+      print("Entrada no valida")
+      return None
+
+def multiplicacionFracciones(x, y):
+    # Retorna la multiplicación fracciones, representadas como listas
+   if len(x) == 2 and len(y) == 2:
+    numeradores = x[0] * y[0]
+    denominadores = x[-1] * y[-1]
+    lista = []
+    lista.append(numeradores)
+    lista.append(denominadores)
+    return lista
+
+   else:
+      print("Entrada no valida")
+      return None
+
+
+# Zona del programa principal
+# 
+print("Bienvenidos / as a cuentas con Fracciones")
+a = cargarFraccion()
+b = cargarFraccion()
+print("El denominador de la primera fracción es:", numeradorFraccion(a))
+print("El numerador de la segunda fracción es:", frac2.numerator)
+print("La suma de dichas fracciones es:", frac1 + frac2)
+print("La resta de dichas fracciones es:", frac1 - frac2)
+print("La multiplicación de dichas fracciones es:", frac1 * frac2)
+print("La división es:", frac1 / frac2)
+
+
+'''
+3. Ejercicios extras utilizando programación orientada a objetos
+
+Ejercicio 19: Implemente el Ejercicio 14 utilizando clases. Realice las correspondientes
+invocaciones a cada uno de los métodos.
+Ejercicio 20: Implemente el Ejercicio 18 utilizando clases. Realice las correspondientes
+invocaciones a cada uno de los métodos.
+'''
