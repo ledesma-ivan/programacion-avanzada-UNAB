@@ -603,7 +603,6 @@ def multiplicacionFracciones(x, y):
 
 
 # Zona del programa principal
-#
 print("Bienvenidos / as a cuentas con Fracciones")
 a = cargarFraccion()
 b = cargarFraccion()
