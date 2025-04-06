@@ -515,8 +515,7 @@ Prestar antencion en esta caso el input es lista, no hace falta crear """
 def cargarFraccion():
     # Solicita al usuario el numerador y denominador. Arma la fracción como
     # una lista y la retorna
-    a = int(input("Ingrese el numerador: "))
-    b = int(input("Ingrese el denominador: "))
+    lista = [a, b]
     lista = []
     lista.append(a)
     lista.append(b)
@@ -604,14 +603,29 @@ def multiplicacionFracciones(x, y):
 
 # Zona del programa principal
 print("Bienvenidos / as a cuentas con Fracciones")
-a = cargarFraccion()
-b = cargarFraccion()
-print("El denominador de la primera fracción es:", numeradorFraccion(a))
-print("El numerador de la segunda fracción es:", frac2.numerator)
-print("La suma de dichas fracciones es:", frac1 + frac2)
-print("La resta de dichas fracciones es:", frac1 - frac2)
-print("La multiplicación de dichas fracciones es:", frac1 * frac2)
-print("La división es:", frac1 / frac2)
+
+f1 = [1, 2]  # representa 1/2
+f2 = [3, 4]  # representa 3/4
+
+# Obtener numerador y denominador
+print("Numerador de f1:", numeradorFraccion(f1))
+print("Denominador de f1:", denominadorFraccion(f1))
+
+# Sumar fracciones
+suma = sumaFracciones(f1, f2)
+print("Suma de f1 y f2:", suma)
+
+# Restar fracciones
+resta = restaFracciones(f1, f2)
+print("Resta de f1 y f2:", resta)
+
+# Multiplicar fracciones
+multiplicacion = multiplicacionFracciones(f1, f2)
+print("Multiplicación de f1 y f2:", multiplicacion)
+
+# Dividir fracciones
+division = divisionFracciones(f1, f2)
+print("División de f1 y f2:", division)
 
 
 '''
@@ -622,3 +636,5 @@ invocaciones a cada uno de los métodos.
 Ejercicio 20: Implemente el Ejercicio 18 utilizando clases. Realice las correspondientes
 invocaciones a cada uno de los métodos.
 '''
+
+
