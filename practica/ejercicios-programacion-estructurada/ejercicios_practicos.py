@@ -659,3 +659,90 @@ conversor_real = ConversorReales(10000, 785)
 print(conversor_dolar.convertir_moneda())
 print(conversor_euros.convertir_a_euros())
 print(conversor_real.convertir_a_real())
+
+
+#Ejercicio 20: Implemente el Ejercicio 18 utilizando clases. Realice las correspondientes
+# invocaciones a cada uno de los métodos.
+
+class Fraccion:
+    def __init__(self, numerador, denominador):
+        if denominador == 0:
+            raise ValueError("El denominador no puede ser cero.")
+        self.num = numerador
+        self.den = denominador
+        self.simplificar()  # Se simplifica automáticamente al crearla
+
+    def __str__(self):
+        return f"{self.num}/{self.den}"
+
+    def mcd(self, a, b):
+        while b != 0:
+            a, b = b, a % b
+        return abs(a)
+
+    def simplificar(self):
+        divisor = self.mcd(self.num, self.den)
+        self.num //= divisor
+        self.den //= divisor
+
+    def numerador(self):
+        return self.num
+
+    def denominador(self):
+        return self.den
+
+    def sumar(self, otra):
+        nuevo_num = self.num * otra.den + otra.num * self.den
+        nuevo_den = self.den * otra.den
+        return Fraccion(nuevo_num, nuevo_den)
+
+    def restar(self, otra):
+        nuevo_num = self.num * otra.den - otra.num * self.den
+        nuevo_den = self.den * otra.den
+        return Fraccion(nuevo_num, nuevo_den)
+
+    def multiplicar(self, otra):
+        nuevo_num = self.num * otra.num
+        nuevo_den = self.den * otra.den
+        return Fraccion(nuevo_num, nuevo_den)
+
+    def dividir(self, otra):
+        if otra.num == 0:
+            raise ZeroDivisionError("No se puede dividir por una fracción con numerador 0.")
+        nuevo_num = self.num * otra.den
+        nuevo_den = self.den * otra.num
+        return Fraccion(nuevo_num, nuevo_den)
+    
+    
+# Crear fracciones
+f1 = Fraccion(4, 8)
+f2 = Fraccion(1, 3)
+
+# Mostrar fracciones (se simplifican automáticamente)
+print(f1)  # → 1/2
+print(f2)  # → 1/3
+
+# Acceder a numerador y denominador
+print(f1.numerador)    # → 1
+print(f1.denominador)  # → 2
+
+# Sumar
+suma = f1.sumar(f2)
+print("Suma:", suma)  # → 5/6
+
+# Restar
+resta = f1.restar(f2)
+print("Resta:", resta)  # → 1/6
+
+# Multiplicar
+producto = f1.multiplicar(f2)
+print("Multiplicación:", producto)  # → 1/6
+
+# Dividir
+division = f1.dividir(f2)
+print("División:", division)  # → 3/2
+
+# Modificar numerador o denominador
+f1.numerador = 8
+f1.denominador = 20
+print("Modificada:", f1)  # → 2/5 (se vuelve a simplificar automáticamente)
