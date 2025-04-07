@@ -602,3 +602,60 @@ invocaciones a cada uno de los métodos.
 Ejercicio 20: Implemente el Ejercicio 18 utilizando clases. Realice las correspondientes
 invocaciones a cada uno de los métodos.
 '''
+
+# Ejercicio 19:
+''' Ejercicio 14: Definir tres funciones llamadas convertir_a_dolar, convertir_a_euro y convertir_a_real.
+Cada función recibe un parámetro que representa un monto en pesos y devuelve su conversión
+respectiva.''' 
+
+class ConversorMoneda:
+    def __init__(self, pesos):
+        self.pesos = pesos
+
+    def mostrar_pesos(self):
+        return f"Tienes {self.pesos} pesos"
+
+
+# Clase hija que convierte a dólares
+class ConversorDolar(ConversorMoneda):
+    def __init__(self, pesos, tasa_dolar):
+        super().__init__(pesos) # Con esto estoy herendando la clase padre que es peso 
+        self.tasa_dolar = tasa_dolar
+        
+    def convertir_moneda(self):
+        # Siempre es importante incluir el self
+        conversion_dolar = self.pesos / self.tasa_dolar
+        return conversion_dolar
+    
+
+
+# Clase hija que convierte en euros
+class ConversorEuros(ConversorMoneda):
+
+    def __init__(self, pesos, tasa_euros):
+        super().__init__(pesos) # Heredamos la clase pesos
+        self.tasa_euros = tasa_euros
+
+
+    def convertir_a_euros(self):
+        conversion_euros = self.pesos / self.tasa_euros
+        return conversion_euros
+
+class ConversorReales(ConversorMoneda):
+    def __init__(self, pesos, tasa_reales):
+        super().__init__(pesos)
+        self.tasa_reales = tasa_reales
+
+    def convertir_a_real(self):
+        conversion_reales = self.pesos / self.tasa_reales 
+        return conversion_reales
+
+# Crear instancias
+conversor_dolar = ConversorDolar(1000, 1350)
+conversor_euros = ConversorEuros(1000, 1200)
+conversor_real = ConversorReales(10000, 785)
+
+# Llamar a los métodos
+print(conversor_dolar.convertir_moneda())
+print(conversor_euros.convertir_a_euros())
+print(conversor_real.convertir_a_real())
