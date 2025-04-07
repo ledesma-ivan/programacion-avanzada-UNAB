@@ -513,119 +513,85 @@ Prestar antencion en esta caso el input es lista, no hace falta crear """
 
 
 def cargarFraccion():
-    # Solicita al usuario el numerador y denominador. Arma la fracción como
-    # una lista y la retorna
-    lista = [a, b]
-    lista = []
-    lista.append(a)
-    lista.append(b)
-    return lista
+    # Solicita al usuario el numerador y denominador. Retorna la fracción como
+    # lista
+    a = int(input("Ingrese el numerador: "))
+    b = int(input("Ingrese el denominador (no puede ser 0): "))
+    while b == 0:
+        print("El denominador no puede ser cero. Intente nuevamente.")
+        b = int(input("Ingrese el denominador: "))
+    return [a, b]
 
 
-def numeradorFraccion(x):
-    # Retorna el numerador que se encuentra en la fracción x, representada
-    # como una lista
-    if len(x) == 2:
-        numerador = x[0]
-        return numerador
-    else:
-        print("Entrada no valida")
+def numeradorFraccion(frac):
+    return frac[0]
+
+
+def denominadorFraccion(frac):
+    return frac[1]
+
+
+def mcd(a, b):
+    # Calcula el máximo común divisor de forma manual
+    while b != 0:
+        a, b = b, a % b
+    return abs(a)
+
+
+def simplificarFraccion(frac):
+    num, den = frac
+    divisor = mcd(num, den)
+    return [num // divisor, den // divisor]
+
+
+def sumaFracciones(f1, f2):
+    num1, den1 = f1
+    num2, den2 = f2
+    num = num1 * den2 + num2 * den1
+    den = den1 * den2
+    return simplificarFraccion([num, den])
+
+
+def restaFracciones(f1, f2):
+    num1, den1 = f1
+    num2, den2 = f2
+    num = num1 * den2 - num2 * den1
+    den = den1 * den2
+    return simplificarFraccion([num, den])
+
+
+def multiplicacionFracciones(f1, f2):
+    num = f1[0] * f2[0]
+    den = f1[1] * f2[1]
+    return simplificarFraccion([num, den])
+
+
+def divisionFracciones(f1, f2):
+    if f2[0] == 0:
+        print("No se puede dividir por una fracción con numerador 0.")
         return None
+    num = f1[0] * f2[1]
+    den = f1[1] * f2[0]
+    return simplificarFraccion([num, den])
 
 
-def denominadorFraccion(x):
-    # Retorna el denominador que se encuentra en la fracción x, representada
-    # como una lista
-    if len(x) == 2:
-        denominador = x[-1]
-        return denominador
+# Programa principal
+print("Bienvenido/a a operaciones con Fracciones")
 
+# Se pueden ingresar con cargarFraccion() si se desea
+f1 = [1, 2]
+f2 = [3, 4]
 
-def sumaFracciones(x, y):
-    # Retorna la suma de las fracciones, representadas como listas
-    if x == 2 and y == 2:
-        numeradores = x[0] + y[0]
-        denominadores = x[-1] + y[-1]
-        lista = []
-        lista.append(numeradores)
-        lista.append(denominadores)
-        return lista
+print("\nFracción 1:", f1)
+print("Fracción 2:", f2)
 
-    else:
-        print("Entrada no valida")
-        return None
-
-
-def restaFracciones(x, y):
-    # Retorna la resta de las fracciones, representadas como listas
-    if len(x) == 2 and len(y) == 2:
-        numeradores = x[0] - y[0]
-        denominadores = x[-1] - y[-1]
-        lista = []
-        lista.append(numeradores)
-        lista.append(denominadores)
-        return lista
-
-    else:
-        print("Entrada no valida")
-        return None
-
-
-def divisionFracciones(x, y):
-    # Retorna la división de las fracciones, representadas como listas:
-    if len(x) == 2 and len(y) == 2:
-        numeradores = x[0] / y[0]
-        denominadores = x[-1] / y[-1]
-        lista = []
-        lista.append(numeradores)
-        lista.append(denominadores)
-        return lista
-
-    else:
-        print("Entrada no valida")
-        return None
-
-
-def multiplicacionFracciones(x, y):
-    # Retorna la multiplicación fracciones, representadas como listas
-    if len(x) == 2 and len(y) == 2:
-        numeradores = x[0] * y[0]
-        denominadores = x[-1] * y[-1]
-        lista = []
-        lista.append(numeradores)
-        lista.append(denominadores)
-        return lista
-
-    else:
-        print("Entrada no valida")
-        return None
-
-
-# Zona del programa principal
-print("Bienvenidos / as a cuentas con Fracciones")
-
-f1 = [1, 2]  # representa 1/2
-f2 = [3, 4]  # representa 3/4
-
-# Obtener numerador y denominador
-print("Numerador de f1:", numeradorFraccion(f1))
+print("\nNumerador de f1:", numeradorFraccion(f1))
 print("Denominador de f1:", denominadorFraccion(f1))
 
-# Sumar fracciones
-suma = sumaFracciones(f1, f2)
-print("Suma de f1 y f2:", suma)
-
-# Restar fracciones
-resta = restaFracciones(f1, f2)
-print("Resta de f1 y f2:", resta)
-
-# Multiplicar fracciones
-multiplicacion = multiplicacionFracciones(f1, f2)
-print("Multiplicación de f1 y f2:", multiplicacion)
-
-# Dividir fracciones
-division = divisionFracciones(f1, f2)
-print("División de f1 y f2:", division)
+print("\nSuma de f1 y f2:", sumaFracciones(f1, f2))
+print("Resta de f1 y f2:", restaFracciones(f1, f2))
+print("Multiplicación de f1 y f2:", multiplicacionFracciones(f1, f2))
+print("División de f1 y f2:", divisionFracciones(f1, f2))
 
 
 '''
@@ -636,5 +602,3 @@ invocaciones a cada uno de los métodos.
 Ejercicio 20: Implemente el Ejercicio 18 utilizando clases. Realice las correspondientes
 invocaciones a cada uno de los métodos.
 '''
-
-
