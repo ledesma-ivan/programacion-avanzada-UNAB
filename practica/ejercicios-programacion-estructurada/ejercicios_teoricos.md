@@ -33,7 +33,72 @@ b) Si hay un orden es el siguiente:
 
 c) El uso de la sencuencia return se usa para devolver un valor o resultado esperado de la funcion.
 
-d) 
+d) La diferencia entre un definicion y una invocacion de una funcion es que la definicion vos le decis los parametros osea las cosas que irian dentro de la funcion y la invocacion es vos estarias llamando la funcion para que ejecute con los parametros dados.
 
+# Definición de la función con un parámetro formal 'nombre'
+def saludar(nombre):
+    print(f"Hola, {nombre}!")
+
+# Llamada a la función con un argumento 'Lucía'
+saludar("Lucía")
+
+e) Los parametros formales son las parametros que le damos una funcion por ejemplo nombre, aun no tiene valor y sirve para recibir datos desde fuera de la función, hacer funciones más generales y reutilizables y trabajar con esos datos dentro del cuerpo de la función.
+
+# Definición de la función con un parámetro formal 'nombre'
+def saludar(nombre): #Aun no tiene valor.
+    print(f"Hola, {nombre}!")
+
+# Llamada a la función con un argumento 'Lucía'
+saludar("Lucía")
+
+f)  Los parametros reales son aquellos que damos a la funcion y que le damos un valor y sirve para recibir datos desde dentro de la función, hacer funciones más generales y trabajar con esos datos dentro del cuerpo de la función.
+
+Ejemplo:
+
+class persona():
+    patas = 2 # Le estamos dando atributos en la clase
+
+    def __init__(self, nombre): # Parametros 
+        self.nombre = nombre
+
+    def retrun_patas(self): # Metodo
+        return self.patas
+
+
+persona_1 = persona("Martin") # En este caso aca le estariamos pasando el parametro real
+
+print(persona_1.retrun_patas())
+
+g) Cuerpo de una funcion es la intruccion que esta adentro de la funcion osea es lo que hace la funcion que estamos definiendo.
+
+h) ¿Existen funciones sin parámetros o argumentos? TODO
+
+Si por ejemplo:
+
+i) ¿Puede usar una letra o un número como parámetro formal? ¿Y como parámetro real? Si se puede usar una letra como parametro formal y real pero de deberse no es recomendable ya que capaz vos lo sabes pero tu compañero que lee el codigo no y un numero como parametro formal, te tiraria error y como formato real el numero pasaria sin problema.
+
+j) ¿Puedo tener una cantidad distinta de parámetros formales que reales en una función?
+De poder se puede pero a la hora de ejecutarlo te tiraria error porque cuando estaria invocando a la funcion te tiraria error que estaria faltanto los parametros formales que pusiste si le pones de mas igualmente te va a tirar porque porque no los definiste formalmente.
+
+k) ¿Cómo se puede implementar un módulo con solo definiciones de funciones e importarlo desde
+tu programa? ¿Cuáles son las formas de importar que ofrece Python?
+Si se puede
+
+Se puede crear el archivo
+# mimodulo.py
+def saludar(nombre):
+    print(f"Hola, {nombre}")
+
+despues podes importar toda la libreria
+import mimodulo
+
+importar una funcion especifica
+from mimodolu import saludar
+
+importar todo con * 
+from mimodulo * 
+
+y importar con alias
+import mimodulo as mm
 
 l) La diferencia fundamental radica que en el punto l.a esta importando la libreria math y en el l.b esta importando una funcion de la libreria math.
