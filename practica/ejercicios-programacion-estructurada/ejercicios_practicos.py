@@ -35,6 +35,52 @@ print(circunferencia(2))
 
 # Alternativa opcional:
 
+class Figura:
+    def calcular_area(self):
+        pass
+
+    def calcular_perimetro(self):
+        pass
+
+    def mostrar_info(self):
+        area = self.calcular_area()
+        perimetro = self.calcular_perimetro()
+        return f"El área es: {area}, y su perímetro es: {perimetro}"
+
+
+class Cuadrado(Figura):
+    def __init__(self, lado):
+        self.lado = lado
+
+    def calcular_area(self):
+        return self.lado * self.lado
+
+    def calcular_perimetro(self):
+        return 4 * self.lado
+
+
+class Rectangulo(Figura):
+    def __init__(self, ancho, alto):
+        self.ancho = ancho
+        self.alto = alto
+
+    def calcular_area(self):
+        return self.ancho * self.alto
+
+    def calcular_perimetro(self):
+        return 2 * (self.ancho + self.alto)
+
+
+class Circunferencia(Figura):
+    def __init__(self, radio):
+        self.radio = radio
+
+    def calcular_area(self):
+        return 3.14 * self.radio ** 2
+
+    def calcular_perimetro(self):
+        return 2 * 3.14 * self.radio
+
 
 # Ejercicio 1:
 # a) Dado el siguiente código indique cuáles son los parámetros reales y los formales:
