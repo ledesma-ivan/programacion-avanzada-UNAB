@@ -11,6 +11,13 @@ class Punto():
     def get_eje_y(self):
         return self.eje_y
 
+    # Es necesario para aplicarlo en el siguiente ejercicio el 3
+    def set_eje_x(self, eje_x):
+        self.eje_x = eje_x
+
+    def set_eje_y(self, eje_y):
+        self.eje_y = eje_y
+
     def impresion(self):
         print({self.eje_x}, {self.eje_y})
 
@@ -33,12 +40,57 @@ print(puntos.opuesto())
 # Ejercicio 3:
 
 
-class Punto:
-    pass
+class Linea:
+    def __init__(self, punto_a, punto_b):
+        self.punto_a = punto_a
+        self.punto_b = punto_b
+
+    def mueve_derecha(self, d):
+        self.punto_a.set_eje_x(self.punto_a.get_eje_x() + d)
+        self.punto_b.set_eje_x(self.punto_b.get_eje_x() + d)
+
+    def mueve_izquierda(self, i):
+        self.punto_a.set_eje_x(self.punto_a.get_eje_x() - i)
+        self.punto_b.set_eje_x(self.punto_b.get_eje_x() - i)
+
+    def mueve_arriba(self, a):
+        self.punto_a.set_eje_y(self.punto_a.get_eje_y() + a)
+        self.punto_b.set_eje_y(self.punto_b.get_eje_y() + a)
+
+    def mueve_abajo(self, ab):
+        self.punto_a.set_eje_y(self.punto_a.get_eje_y() - ab)
+        self.punto_b.set_eje_y(self.punto_b.get_eje_y() - ab)
+
+
+# Invocaciones
+punto_a = Punto(2, 4)
+punto_b = Punto(3, 5)
+
+distancia_derecha = 1 
+# Guarda la instancia en la variable mi_linea
+mi_linea = Linea(punto_a, punto_b)
+
+mi_linea.mueve_derecha(distancia_derecha)
+print(f"Punto A después de mover a la derecha: {mi_linea.punto_a}")
+print(f"Punto B después de mover a la derecha: {mi_linea.punto_b}")
+
+distancia_izquierda = 2
+mi_linea.mueve_izquierda(distancia_izquierda)
+print(f"Punto A después de mover a la izquierda: {mi_linea.punto_a}")
+print(f"Punto B después de mover a la izquierda: {mi_linea.punto_b}")
+
+distancia_arriba = 2
+mi_linea.mueve_arriba(distancia_arriba)
+print(f"Punto A después de mover arriba: {mi_linea.punto_a}")
+print(f"Punto B después de mover arriba: {mi_linea.punto_b}")
+
+distancia_abajo = 2
+mi_linea.mueve_abajo(distancia_abajo)
+print(f"Punto A después de mover arriba: {mi_linea.punto_a}")
+print(f"Punto B después de mover arriba: {mi_linea.punto_b}")
+
 
 # Ejercio 4:
-
-
 class Cancion:
     def __init__(self, titulo, autor):
         self.titulo = titulo
@@ -51,16 +103,22 @@ class Cancion:
         return self.autor
 
     def set_titulo(self, titulo):
-        cambio_titulo = self.titulo = titulo
-        return cambio_titulo
+        self.titulo = titulo
+        return self.titulo
 
     def set_autor(self, autor):
-        cambio_autor = autor
-        return cambio_autor
+        self.autor = autor
+        return self.autor
 
+
+# Realizo las invocaciones
+cancion_ej = Cancion("Dame fuego", "Sandro")
+cancion_ej.get_autor()
+cancion_ej.get_titulo()
+cancion_ej.set_autor("Re duro, como el maestruli")
+cancion_ej.set_titulo("JAJAJA")
 
 # Ejercicio 5:
-
 class Persona():
     def __init__(self, nombre):
         self.nombre = nombre
@@ -69,8 +127,6 @@ class Persona():
         return self.nombre
 
 # Aplicamos herencia
-
-
 class Libro(Persona):
     def __init__(self, nombre, titulo, ISBN, paginas,
                  edicion, editorial, lugar, fecha_edicion):
@@ -91,8 +147,6 @@ ISBN: {self.ISBN}
 {self.editorial}, {self.fecha_edicion}
 {self.paginas} páginas
 """
-
-
 persona = Persona("Liang, Y. Daniel")
 libro = Libro(
     persona,
@@ -103,4 +157,5 @@ libro = Libro(
     "Prentice-Hall",
     "New Jersey (USA)",
     "viernes 16 de noviembre de 2001")
+
 print(libro.mostrar_info())
