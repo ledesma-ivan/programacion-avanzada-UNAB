@@ -50,18 +50,6 @@ Crea una función que calcule el producto de todos los argumentos numéricos.
 Obtener el mayor valor:
 Crea una función que retorne el valor máximo entre los argumentos.
 
-🧩 Nivel 3: Avanzado
-Separar por tipo:
-Crea una función que devuelva un diccionario clasificando los argumentos por tipo (int, str, etc.).
-
-Emparejar argumentos en tuplas:
-Crea una función que agrupe los argumentos en pares dentro de tuplas. Si hay un número impar de argumentos, ignora el último.
-
-Convertir en diccionario (pares):
-Crea una función que convierta los argumentos en un diccionario, usando los pares (clave, valor) recibidos.
-
-
-
 
 '''
 # Prestar atencion cuando se entra a args se nombra con args 
@@ -98,7 +86,7 @@ def dev_entero(*args):
 dev_entero("jose",2, "martin", 3)
 
 
-# Revisar aca
+# Prestar atencion a la identacion.
 def producto_arg(*args):
     for x in args:
         if isinstance(x ,int):
@@ -108,4 +96,18 @@ def producto_arg(*args):
 
 
 producto_arg(2,2)
+
+
+'''    
+🧩 Nivel 3: Avanzado
+Separar por tipo:
+Crea una función que devuelva un diccionario clasificando los argumentos por tipo (int, str, etc.).
+
+Emparejar argumentos en tuplas:
+Crea una función que agrupe los argumentos en pares dentro de tuplas. Si hay un número impar de argumentos, ignora el último.
+
+Convertir en diccionario (pares):
+Crea una función que convierta los argumentos en un diccionario, usando los pares (clave, valor) recibidos.
+'''
+
 
