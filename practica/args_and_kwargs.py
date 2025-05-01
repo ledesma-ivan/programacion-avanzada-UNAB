@@ -102,6 +102,10 @@ dev_entero("jose",2, "martin", 3)
 def producto_arg(*args):
     for x in args:
         if isinstance(x ,int):
-            total = 0
-            total * x
+            multplicacion = x * x
+    # Revisar la identacion siempre
+    print(multplicacion)
+
+
+producto_arg(2,2)
 
