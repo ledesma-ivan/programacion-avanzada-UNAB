@@ -106,8 +106,28 @@ Crea una función que devuelva un diccionario clasificando los argumentos por ti
 Emparejar argumentos en tuplas:
 Crea una función que agrupe los argumentos en pares dentro de tuplas. Si hay un número impar de argumentos, ignora el último.
 
+
+
+
 Convertir en diccionario (pares):
 Crea una función que convierta los argumentos en un diccionario, usando los pares (clave, valor) recibidos.
 '''
 
+dict = []
+def tipo_arg(*args):
+    for x in args:
+        if isinstance(x, int):
+            # Entero
+            entero = "int"
+            dict.append(entero)
+        elif isinstance(x, str):
+            string = "str"
+            dict.append(string)
+        elif isinstance(x, float):
+            dict.append("float")
+    return dict
+
+
+
+print(tipo_arg(2, 4.2, "hola"))
 
