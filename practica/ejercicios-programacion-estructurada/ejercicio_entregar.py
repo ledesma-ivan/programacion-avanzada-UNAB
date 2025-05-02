@@ -12,8 +12,7 @@ Herencia: Las clases hijos heredan atributos y metodos de las clases padres
 
 1. La diferencia principal es que en abstracion definimos los atributos y metodos de las clases en ancapsulamiento lo que hacemos es proteger las variables para que no se puedan modificar 
 
-
-2. El pilar que permite sobreescribir metodos el polimorfisimo
+2. El pilar que permite sobreescribir metodos el polimorfisimo.
 '''
 
 class Dog:
