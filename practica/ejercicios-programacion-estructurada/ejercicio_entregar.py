@@ -24,7 +24,7 @@ dog = Dog("Bobby")
 print(dog.name)
 
 ''' 
-Eercicio:
+Ejercicio:
 Define una jerarquía simple para vehículos con al menos una clase base y dos clases hijas.
 Cada clase hija debe tener un método propio sobrescrito que imprima información
 diferente. Crea una función que reciba un vehículo y llame a ese método.
