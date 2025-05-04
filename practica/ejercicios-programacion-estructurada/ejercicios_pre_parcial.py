@@ -8,25 +8,35 @@ Falso al termino que te estas referiendo es la programacion descriptiva en este 
 
 
 2. ¿Qué estructuras básicas componen la programación imperativa?
-Los bucles for, while y las condicionales and, or, if, else, elif, que permite que se ejecute las decisiones. 
+Los bucles for, while y las condicionales and, or, if, else, elif, que permite que se ejecute las decisiones.
 
 '''
 
 
-nums = [1,2,3,4]
+nums = [1, 2, 3, 4]
 lista_new = []
 
 for i in nums:
- if i % 2 == 0:
-   x = i * 2
-   lista_new.append(x)
-print(lista_new)  
+    if i % 2 == 0:
+        x = i * 2
+        lista_new.append(x)
+print(lista_new)
 
-# Corregir para que solo los pares se dupliquen y la salida sea una nueva lista.
+# Corregir para que solo los pares se dupliquen y la salida sea una nueva
+# lista.
 
-'''  
+'''
 Ejercicio práctico:
 Crea una función que reciba una lista de números y devuelva otra lista con solo los números
 pares multiplicados por 3, usando solo estructuras imperativas (no comprensiones ni
 funciones como map o filter)
 '''
+
+lista = [2, 3, 4, 5]
+
+lista_nueva = []
+for i in lista:
+    if i % 2 == 0:
+        x = i * 3
+        lista_nueva.append(x)
+print(lista_nueva)
